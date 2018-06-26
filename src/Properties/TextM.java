@@ -22,7 +22,7 @@ public class TextM extends Message implements Likable{
     @Override
     public void likeOperation(String name) {
         likes++;
-        System.out.printf("%s liked: %s(%d likes), on %s\n", name, textField, getLikes(), getTimeStamp());
+        System.out.printf("%s liked: %s, [%s]\n", name, textField, getTimeStamp());
     }
 
     @Override

@@ -13,8 +13,6 @@ public class SlackWorkDirectory {
     }
 
 
-
-
     public void setChannels(ArrayList<Channel> channels) {
         this.channels = channels;
     }

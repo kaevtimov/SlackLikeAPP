@@ -18,6 +18,6 @@ public class IconM extends Message {
 
     @Override
     public void showMSG() {
-        System.out.printf("[%s] (%s) Emoticon Message: %s, (%d likes)\n", getTimeStamp(), getAuthor(), getIcon());
+        System.out.printf("[%s] (%s) Emoticon Message: %s.\n", getTimeStamp(), getAuthor(), icon);
     }
 }

@@ -23,7 +23,7 @@ public class ImageM extends Message implements Likable, Downloadable{
     @Override
     public void likeOperation(String name) {
         likes++;
-        System.out.printf("%s liked: %s(%d likes), on %s\n", name, nameImage,getLikes(), getTimeStamp());
+        System.out.printf("%s liked: %s, [%s]\n", name, nameImage, getTimeStamp());
     }
 
     public int getLikes() {
