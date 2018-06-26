@@ -1,10 +1,10 @@
 package Properties;
 
 public abstract class Message {
-    private Person author;      //String
+    private String author;
     private String timeStamp;
 
-    public Message(Person author, String timeStamp) {
+    public Message(String author, String timeStamp) {
         this.author = author;
         this.timeStamp = timeStamp;
 
@@ -18,16 +18,18 @@ public abstract class Message {
         this.timeStamp = timeStamp;
     }
 
-    public Person getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(Person author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
     public abstract void showMSG();
 
-//    @Override
-//    public String to
+    @Override
+    public String toString(){
+        return String.format("[%s](%s)", timeStamp, author);
+    }
 }

@@ -32,15 +32,56 @@ public class Channel {
         this.messageHistory = messageHistory;
     }
 
-    //public void postTextM
-    //public void postIconM
-    //public void postImageM
-    //public void postFileM
-    //messageHistory.add() likable.add() downloadable.add()
-    //public void list1History
-    //public void clearHistory
-    //public void like
-    //public void download
+    public void postTextM(String author, String timeStamp, String textField){
+        TextM tm = new TextM(author, timeStamp, textField);
+        messageHistory.add(tm);
+        likables.add(tm);
+    }
+     public void postIconM(String author, String timeStamp, IconType icon){
+        IconM im = new IconM(author, timeStamp, icon);
+        messageHistory.add(im);
+     }
+
+    public void postImageM(String author, String timeStamp, String nameImage){
+        ImageM imessage = new ImageM(author, timeStamp, nameImage);
+        messageHistory.add(imessage);
+        likables.add(imessage);
+        downloadables.add(imessage);
+    }
+
+    public void postFileM(String author, String timeStamp, String fileName){
+        FileM fm = new FileM(author, timeStamp, fileName);
+        messageHistory.add(fm);
+        downloadables.add(fm);
+    }
+
+    public void listHistory(){
+        for (Message m:messageHistory) {
+            m.showMSG();
+        }
+    }
+
+    public void clearHistory(){
+        messageHistory.clear();
+        likables.clear();
+        downloadables.clear();
+    }
+
+    public void likeMessage(String timeStamp, String user){
+        for (Likable m:likables) {
+            if(((Message)m).getTimeStamp().equals(timeStamp)){
+                m.likeOperation(user);
+            }
+        }
+    }
+
+    public void downloadMessage(String timeStamp, String directory){
+        for (Downloadable d:downloadables){
+            if(((Message)d).getTimeStamp().equals(timeStamp)){
+                d.downloadOperation(directory);
+            }
+        }
+    }
 
     @Override
     public String toString() {

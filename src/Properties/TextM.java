@@ -5,7 +5,7 @@ public class TextM extends Message implements Likable{
     private String textField;
     private int likes;
 
-    public TextM(Person author, String timeStamp, String textField, int likes) {
+    public TextM(String author, String timeStamp, String textField) {
         super(author, timeStamp);
         this.textField = textField;
         this.likes = 0;
@@ -21,8 +21,8 @@ public class TextM extends Message implements Likable{
 
     @Override
     public void likeOperation(String name) {
-        this.likes += 1;
-        System.out.printf("Likes: %d, on %s", getLikes(), getTimeStamp());
+        likes++;
+        System.out.printf("%s liked: %s(%d likes), on %s\n", name, textField, getLikes(), getTimeStamp());
     }
 
     @Override
@@ -37,6 +37,6 @@ public class TextM extends Message implements Likable{
 
     @Override
     public void showMSG() {
-        //sout
+        System.out.printf("[%s] (%s) Text Message: %s, (%d likes)\n", getTimeStamp(), getAuthor(), getTextField(), getLikes());
     }
 }

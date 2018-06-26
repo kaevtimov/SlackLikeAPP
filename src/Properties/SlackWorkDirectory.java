@@ -10,9 +10,6 @@ public class SlackWorkDirectory {
 
     public SlackWorkDirectory(){
         channels = new ArrayList<>();
-//        setCurrent(current);
-//        channels.add(current);
-//        setChannels(channels);
     }
 
 
@@ -37,7 +34,7 @@ public class SlackWorkDirectory {
 
     public void createNewChannel(String name){
         Channel c = new Channel(name);
-        this.channels.add(c);
+        channels.add(c);
         current = c;
     }
 
@@ -54,9 +51,5 @@ public class SlackWorkDirectory {
         for (Channel ch:channels) {
             System.out.print(ch.getName() + " ");
         }
-    }
-
-    public void clearHistory(ArrayList<Channel> channels){
-
     }
 }

@@ -1,5 +1,5 @@
 package Properties;
 
 public interface Downloadable {
-    void downloadOperation();
+    void downloadOperation(String targetDirectory);
 }
