@@ -18,6 +18,7 @@ public class Application {
         slackApp.getCurrent().postImageM("Stefan", "16:23", "Sea");
         slackApp.getCurrent().downloadMessage("16:23", "C:Users/me");
         slackApp.getCurrent().listHistory();
+        slackApp.getCurrent().listHistory();
 
     }
 }
